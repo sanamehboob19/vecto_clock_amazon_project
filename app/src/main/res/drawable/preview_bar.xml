@@ -1,0 +1,5 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="120dp" android:height="40dp" android:viewportWidth="120" android:viewportHeight="40">
+    <path android:fillColor="#1B1B1F" android:pathData="M5,5h110c2,0 4,2 4,4v22c0,2 -2,4 -4,4h-110c-2,0 -4,-2 -4,-4v-22c0,-2 2,-4 4,-4z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M15,15h30v10h-30z"/> <!-- Time -->
+    <path android:fillColor="#888888" android:pathData="M80,15h25v10h-25z"/> <!-- Date -->
+</vector>

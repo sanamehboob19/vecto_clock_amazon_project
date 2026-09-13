@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="80dp"
+    android:viewportWidth="120"
+    android:viewportHeight="80">
+
+    <!-- Main Widget Background -->
+    <path
+        android:fillColor="#1B1B1F"
+        android:pathData="M10,5h100c4.4,0 8,2.2 8,5v60c0,2.8 -3.6,5 -8,5h-100c-4.4,0 -8,-2.2 -8,-5v-60c0,-2.8 3.6,-5 8,-5z"/>
+
+    <!-- Slot 1 (Top Left) -->
+    <path android:fillColor="#444444" android:pathData="M15,15h25v6h-25z"/> <!-- City Name Mock -->
+    <path android:fillColor="#FFFFFF" android:pathData="M15,25h35v12h-35z"/> <!-- Time Mock -->
+
+    <!-- Slot 2 (Top Right) -->
+    <path android:fillColor="#444444" android:pathData="M70,15h25v6h-25z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M70,25h35v12h-35z"/>
+
+    <!-- Slot 3 (Bottom Left) -->
+    <path android:fillColor="#444444" android:pathData="M15,45h25v6h-25z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M15,55h35v12h-35z"/>
+
+    <!-- Slot 4 (Bottom Right) -->
+    <path android:fillColor="#444444" android:pathData="M70,45h25v6h-25z"/>
+    <path android:fillColor="@color/pinkPrimary" android:pathData="M70,55h35v12h-35z"/> <!-- One Pink Time for Accent -->
+
+</vector>

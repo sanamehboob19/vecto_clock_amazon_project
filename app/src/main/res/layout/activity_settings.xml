@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1113">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_back"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/bg_focus_highlight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_30sdp">
+
+            <!-- SECTION 1: ALARMS -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingTop="@dimen/_20sdp"
+                android:text="Wake-up Configuration"
+                android:textColor="@color/pinkPrimary"
+                android:textSize="@dimen/_9ssp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="#1B1B1F"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <include android:id="@+id/row_dismiss_method" layout="@layout/item_settings_row" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C2C" android:layout_marginHorizontal="@dimen/_15sdp"/>
+                    <include android:id="@+id/row_silence_after" layout="@layout/item_settings_row" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C2C" android:layout_marginHorizontal="@dimen/_15sdp"/>
+                    <include android:id="@+id/row_snooze_length" layout="@layout/item_settings_row" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- SECTION: APPEARANCE -->
+            <TextView
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingTop="@dimen/_25sdp"
+                android:text="Appearance"
+                android:textColor="@color/pinkPrimary"
+                android:textSize="@dimen/_9ssp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="#1B1B1F"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+                    <include android:id="@+id/row_system_time" layout="@layout/item_settings_row" />
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C2C" android:layout_marginHorizontal="@dimen/_15sdp"/>
+                    <include android:id="@+id/row_widget_guide" layout="@layout/item_settings_row" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- SECTION 2: APP SUPPORT -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingTop="@dimen/_25sdp"
+                android:text="Support &amp; Legal"
+                android:textColor="@color/pinkPrimary"
+                android:textSize="@dimen/_9ssp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="#1B1B1F"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <include android:id="@+id/row_privacy" layout="@layout/item_settings_row" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C2C" android:layout_marginHorizontal="@dimen/_15sdp"/>
+                    <include android:id="@+id/row_rate" layout="@layout/item_settings_row" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C2C" android:layout_marginHorizontal="@dimen/_15sdp"/>
+                    <include android:id="@+id/row_feedback" layout="@layout/item_settings_row" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C2C" android:layout_marginHorizontal="@dimen/_15sdp"/>
+                    <include android:id="@+id/row_share" layout="@layout/item_settings_row" />
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#2C2C2C" android:layout_marginHorizontal="@dimen/_15sdp"/>
+                    <include android:id="@+id/row_about" layout="@layout/item_settings_row" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:cardBackgroundColor="#131316"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:strokeColor="#1E1E1E"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VECTO CLOCK"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="Built for focus. Designed for rest."
+                        android:textColor="#555555"
+                        android:textSize="@dimen/_9ssp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

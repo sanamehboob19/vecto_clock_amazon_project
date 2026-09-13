@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1113"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_20sdp">
+
+        <LinearLayout
+            android:id="@+id/display_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_stopwatch_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:includeFontPadding="false"
+                android:text="00:00.00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_55ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.3"
+                android:text="ELAPSED TIME"
+                android:textColor="#333333"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/laps_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_controls_group"
+            app:layout_constraintTop_toBottomOf="@id/display_container">
+
+            <LinearLayout
+                android:id="@+id/layout_laps_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#1AFFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:letterSpacing="0.1"
+                    android:text="RECENT LAPS"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/_7ssp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#1AFFFFFF" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tv_lap_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:lineSpacingExtra="2dp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:text="Laps help you track split times without stopping the clock.\nTap 'Lap' to record a split."
+                    android:textColor="#444444"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_laps"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_controls_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_max="@dimen/_450sdp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_start_stop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/semibold_18"
+                android:nextFocusDown="@id/btn_reset"
+                android:text="Start"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:backgroundTint="@color/pinkPrimary"
+                app:cornerRadius="@dimen/_18sdp" />
+
+            <LinearLayout
+                android:id="@+id/layout_secondary_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_reset"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_48sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/semibold_18"
+                    android:nextFocusUp="@id/btn_start_stop"
+                    android:nextFocusRight="@id/btn_lap"
+                    android:text="Reset"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:backgroundTint="#1B1B1F"
+                    app:cornerRadius="@dimen/_15sdp"
+                    app:strokeColor="#2C2C2C"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_lap"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_48sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/semibold_18"
+                    android:nextFocusUp="@id/btn_start_stop"
+                    android:nextFocusLeft="@id/btn_reset"
+                    android:text="Lap"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:backgroundTint="#1B1B1F"
+                    app:cornerRadius="@dimen/_15sdp"
+                    app:strokeColor="#2C2C2C"
+                    app:strokeWidth="1dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

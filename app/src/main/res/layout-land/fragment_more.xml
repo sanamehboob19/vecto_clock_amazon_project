@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LANDSCAPE: fragment_more.xml — 2-column grid for Fire TV/Tablet -->
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1113"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp">
+
+        <!-- Header -->
+        <TextView android:id="@+id/tv_greeting" android:visibility="gone"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_sub_greeting"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Enhance your sleep and utility experience"
+            android:textColor="#888888" android:textSize="@dimen/_10ssp"
+            android:layout_marginBottom="@dimen/_15sdp"/>
+
+        <!-- 2-column top row: Bedtime + World Clock/ScreenSaver -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:weightSum="2">
+
+            <!-- Bedtime Card (larger) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_bedtime_main"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="@dimen/_8sdp"
+                android:focusable="true" android:focusableInTouchMode="false"
+                android:nextFocusRight="@id/card_world_clock"
+                android:nextFocusDown="@id/card_widget_hub"
+                app:cardBackgroundColor="#1B1B1F" app:cardCornerRadius="@dimen/_20sdp"
+                app:cardElevation="0dp" app:strokeColor="#221F1F" app:strokeWidth="1.2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="@dimen/_16sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/icon_bg_bedtime"
+                        android:layout_width="@dimen/_40sdp" android:layout_height="@dimen/_40sdp"
+                        app:cardBackgroundColor="#252129" app:cardCornerRadius="@dimen/_13sdp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                        <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:padding="@dimen/_9sdp" android:src="@drawable/ic_bedtime_moon"
+                            app:tint="@color/pinkPrimary"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView android:id="@+id/tv_bedtime_title"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="Bedtime Mode" android:textColor="@color/white"
+                        android:fontFamily="@font/semibold_18" android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toEndOf="@id/icon_bg_bedtime"
+                        app:layout_constraintTop_toTopOf="@id/icon_bg_bedtime"/>
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/regular_18"
+                        android:text="Build a healthier routine."
+                        android:textColor="#AAAAAA" android:textSize="@dimen/_9ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_bedtime_title"
+                        app:layout_constraintTop_toBottomOf="@id/tv_bedtime_title"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_setup_bedtime"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:text="Get Started" android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        app:backgroundTint="@color/pinkPrimary" app:cornerRadius="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@id/icon_bg_bedtime"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Right column: World Clock + Screen Saver stacked -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_world_clock"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:focusable="true" android:focusableInTouchMode="false"
+                    android:nextFocusLeft="@id/card_bedtime_main" android:nextFocusDown="@id/card_screen_saver"
+                    app:cardBackgroundColor="#1B1B1F" app:cardCornerRadius="@dimen/_18sdp"
+                    app:cardElevation="0dp" app:strokeColor="#221F1F" app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:gravity="center" android:orientation="vertical" android:padding="@dimen/_16sdp">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_38sdp" android:layout_height="@dimen/_38sdp"
+                            app:cardBackgroundColor="#212429" app:cardCornerRadius="@dimen/_11sdp" app:cardElevation="0dp">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+                                android:padding="@dimen/_9sdp" android:src="@drawable/ic_world_globe" app:tint="#64B5F6"/>
+                        </com.google.android.material.card.MaterialCardView>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp" android:text="World Clock"
+                            android:fontFamily="@font/semibold_18" android:textColor="@color/white" android:textSize="@dimen/_11ssp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_screen_saver"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:focusable="true" android:focusableInTouchMode="false"
+                    android:nextFocusLeft="@id/card_bedtime_main" android:nextFocusUp="@id/card_world_clock"
+                    app:cardBackgroundColor="#1B1B1F" app:cardCornerRadius="@dimen/_18sdp"
+                    app:cardElevation="0dp" app:strokeColor="#221F1F" app:strokeWidth="1dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:gravity="center" android:orientation="vertical" android:padding="@dimen/_16sdp">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_38sdp" android:layout_height="@dimen/_38sdp"
+                            app:cardBackgroundColor="#292521" app:cardCornerRadius="@dimen/_11sdp" app:cardElevation="0dp">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+                                android:padding="@dimen/_9sdp" android:src="@drawable/ic_screen_saver" app:tint="#FFD54F"/>
+                        </com.google.android.material.card.MaterialCardView>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp" android:text="Screen Saver"
+                            android:textColor="@color/white" android:fontFamily="@font/semibold_18" android:textSize="@dimen/_11ssp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Widget Hub (full width) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_widget_hub"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:focusable="true" android:focusableInTouchMode="false"
+            android:nextFocusUp="@id/card_world_clock"
+            app:cardBackgroundColor="#1B1B1F" app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_4sdp" app:strokeColor="#221F1F" app:strokeWidth="1.2dp"
+            android:outlineSpotShadowColor="@color/pinkPrimary">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="@dimen/_14sdp">
+
+                <com.google.android.material.card.MaterialCardView android:id="@+id/icon_bg"
+                    android:layout_width="@dimen/_42sdp" android:layout_height="@dimen/_42sdp"
+                    app:cardBackgroundColor="#252129" app:cardCornerRadius="@dimen/_14sdp" app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp" android:src="@drawable/ic_widget_gallery"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_14sdp" android:layout_marginEnd="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/iv_arrow"
+                    app:layout_constraintStart_toEndOf="@id/icon_bg" app:layout_constraintTop_toTopOf="parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:fontFamily="@font/semibold_18" android:text="Widget Gallery"
+                        android:textColor="@color/white" android:textSize="@dimen/_13ssp" android:letterSpacing="0.02"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp" android:text="Choose elegant clocks for your home"
+                        android:textColor="#666666" android:textSize="@dimen/_9ssp" android:fontFamily="@font/regular_18"/>
+                </LinearLayout>
+
+                <ImageView android:id="@+id/iv_arrow"
+                    android:layout_width="@dimen/_16sdp" android:layout_height="@dimen/_22sdp"
+                    android:alpha="0.4" android:rotation="180" android:src="@drawable/ic_back"
+                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" app:tint="@color/white"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Dummy LinearLayout for ID reference (keeps the same binding IDs) -->
+        <LinearLayout android:id="@+id/linearLayout" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+        <TextView android:id="@+id/tv_other_tools" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

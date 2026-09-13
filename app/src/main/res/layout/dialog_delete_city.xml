@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#1B1B1F"
+    app:cardCornerRadius="@dimen/_24sdp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_24sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            app:cardBackgroundColor="#252121"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="0dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/ic_world_globe"
+                android:rotation="45" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:text="Remove City?"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_delete_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="Are you sure you want to stop tracking time for London?"
+            android:textColor="#888888"
+            android:textSize="@dimen/_11ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel_del"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="#AAAAAA"
+                app:cornerRadius="@dimen/_12sdp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm_del"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_weight="1"
+                android:text="Remove"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:backgroundTint="@color/pinkPrimary"
+                app:cornerRadius="@dimen/_12sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_world_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_12sdp"
+    android:layout_marginVertical="@dimen/_6sdp"
+    app:cardBackgroundColor="#1B1B1F"
+    app:cardCornerRadius="@dimen/_18sdp"
+    app:cardElevation="0dp"
+    app:strokeColor="#221F1F"
+    app:strokeWidth="1.2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16sdp">
+
+        <LinearLayout
+            android:id="@+id/layout_city_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/layout_time_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_world_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="London"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:id="@+id/tv_world_time_diff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:letterSpacing="0.02"
+                android:text="5 hours behind"
+                android:textColor="#888888"
+                android:textSize="@dimen/_9ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_time_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_world_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="10:30"
+                android:textColor="@color/pinkPrimary"
+                android:textSize="@dimen/_26ssp"
+                android:includeFontPadding="false" />
+
+            <TextView
+                android:id="@+id/tv_world_day_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TODAY"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1"
+                android:textColor="#444444"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

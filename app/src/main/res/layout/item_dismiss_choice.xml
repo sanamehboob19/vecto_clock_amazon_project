@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_6sdp"
+    android:focusable="true"
+    android:focusableInTouchMode="false"
+    app:cardBackgroundColor="#1A1C23"
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardElevation="0dp"
+    app:strokeColor="#2C2E3A"
+    app:strokeWidth="1.5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_14sdp"
+        android:gravity="center">
+
+        <!-- Top Header Row: Icon + Title + Check -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_choice_icon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_tap_gesture"
+                app:tint="@color/pinkPrimary" />
+
+            <TextView
+                android:id="@+id/tv_choice_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Tap Mode"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/iv_check"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:src="@drawable/ic_check_circle"
+                android:visibility="gone"
+                app:tint="@color/pinkPrimary" />
+        </LinearLayout>
+
+        <!-- Subtitle Description -->
+        <TextView
+            android:id="@+id/tv_choice_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="sans-serif-regular"
+            android:text="Touch buttons to dismiss"
+            android:textColor="#9E9E9E"
+            android:textSize="@dimen/_9ssp" />
+
+        <!-- Mini Visual Preview Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_swipe_track"
+            android:padding="@dimen/_4sdp">
+
+            <!-- Mini Tap Preview -->
+            <LinearLayout
+                android:id="@+id/mini_tap_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:background="@drawable/bg_pill_pink"
+                    android:backgroundTint="#33FFB6C1"
+                    android:gravity="center"
+                    android:text="Snooze"
+                    android:textColor="@color/pinkPrimary"
+                    android:textSize="@dimen/_8ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:background="@drawable/bg_pill_pink"
+                    android:gravity="center"
+                    android:text="Stop"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Mini Swipe Preview -->
+            <RelativeLayout
+                android:id="@+id/mini_swipe_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="◄"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/_8ssp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    app:cardBackgroundColor="@color/pinkPrimary"
+                    app:cardCornerRadius="@dimen/_50sdp"
+                    app:strokeWidth="0dp">
+                    <ImageView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_swipe_gesture"
+                        app:tint="@color/black" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:text="►"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/_8ssp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

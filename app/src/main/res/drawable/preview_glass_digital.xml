@@ -1,0 +1,57 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="60">
+
+    <!-- 1. DARK BACKGROUND -->
+    <path
+        android:pathData="M10,5h80a5,5 0 0 1 5,5v40a5,5 0 0 1 -5,5h-80a5,5 0 0 1 -5,-5v-80a5,5 0 0 1 5,-5z"
+        android:fillColor="#121212"/>
+
+    <!-- 2. SOFT MESH BLOBS (Pink Soft Glows) -->
+    <path
+        android:pathData="M25,15m-15,0a15,15 0,1 1,30 0a15,15 0,1 1,-30 0"
+        android:fillColor="#15FFB6C1"/>
+    <path
+        android:pathData="M75,35m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0"
+        android:fillColor="#12FFB6C1"/>
+
+    <!-- 3. GLASS CARD (Clean Overlay) -->
+    <path
+        android:pathData="M15,12h70a4,4 0 0 1 4,4v28a4,4 0 0 1 -4,4h-70a4,4 0 0 1 -4,-4v-28a4,4 0 0 1 4,-4z"
+        android:fillColor="#1AFFFFFF"
+        android:strokeWidth="0.3"
+        android:strokeColor="#44FFFFFF"/>
+
+    <!-- 4. REFINED TIMER (Sleek 08:20 Style) -->
+    <!-- Digit 0 -->
+    <path android:pathData="M38,22h4v8h-4z" android:strokeWidth="1.2" android:strokeColor="#FFFFFF" />
+    <!-- Digit 8 -->
+    <path android:pathData="M44,22h4v8h-4 M44,26h4" android:strokeWidth="1.2" android:strokeColor="#FFFFFF" />
+    <!-- Separator : -->
+    <path android:pathData="M50,24h0.5 M50,28h0.5" android:strokeWidth="1.2" android:strokeColor="#FFFFFF" android:strokeLineCap="round"/>
+    <!-- Digit 2 -->
+    <path android:pathData="M52,22h4v4h-4v4h4" android:strokeWidth="1.2" android:strokeColor="#FFFFFF" />
+    <!-- Digit 0 -->
+    <path android:pathData="M58,22h4v8h-4z" android:strokeWidth="1.2" android:strokeColor="#FFFFFF" />
+
+    <!-- 5. THIN DIVIDER -->
+    <path
+        android:pathData="M46,34 L54,34"
+        android:strokeWidth="0.6"
+        android:strokeColor="#66FFFFFF"/>
+
+    <!-- 6. TEXT LABELS (Simulated with thin clean lines) -->
+    <!-- "Glassmorphism" title -->
+    <path
+        android:pathData="M38,39 L62,39"
+        android:strokeWidth="1.5"
+        android:strokeColor="#FFFFFF"/>
+    <!-- "Blurred Aesthetics" subtitle -->
+    <path
+        android:pathData="M42,43 L58,43"
+        android:strokeWidth="0.8"
+        android:strokeColor="#88FFFFFF"/>
+
+</vector>

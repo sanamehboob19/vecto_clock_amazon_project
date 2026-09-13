@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Long Greyish-White Hand -->
+    <path
+        android:pathData="M50,50 L50,22"
+        android:strokeColor="#D1D1D1"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <!-- Pink Center Pin -->
+    <path
+        android:pathData="M50,50m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0"
+        android:fillColor="#FFB6C1" />
+</vector>

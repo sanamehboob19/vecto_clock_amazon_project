@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1113"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view_aura_glow"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_280sdp"
+            android:alpha="0.15"
+            android:background="@drawable/bg_clock_aura"
+            app:layout_constraintBottom_toTopOf="@+id/clock_toggle_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_clock_tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.3"
+            android:text="PRECISION IN EVERY SECOND"
+            android:textAllCaps="true"
+            android:textColor="@color/pinkPrimary"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/clock_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@+id/clock_toggle_container"
+            app:layout_constraintTop_toBottomOf="@id/tv_clock_tagline">
+
+            <LinearLayout
+                android:id="@+id/layout_digital_clock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextClock
+                    android:id="@+id/date_clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:format12Hour="EEEE, MMM dd"
+                    android:letterSpacing="0.2"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAllCaps="true"
+                    android:textColor="#888888"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextClock
+                    android:id="@+id/text_clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-thin"
+                    android:format12Hour="hh:mm"
+                    android:maxLines="1"
+                    android:shadowColor="@color/pinkPrimary"
+                    android:shadowRadius="20"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_65ssp" />
+
+                <TextView
+                    android:id="@+id/tv_timezone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Local Time"
+                    android:textColor="#444444"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_classic_clock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.nzdeveloper.androidclock.alarmtimer.stopwatch.widget.AnalogClockView
+                    android:id="@+id/analog_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/clock_toggle_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_30sdp"
+            app:cardBackgroundColor="#1B1B1F"
+            app:cardCornerRadius="@dimen/_50sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_4sdp">
+
+                <TextView
+                    android:id="@+id/btn_digital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill_pink"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:maxLines="1"
+                    android:nextFocusRight="@id/btn_classic"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text="Digital"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btn_classic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:maxLines="1"
+                    android:nextFocusLeft="@id/btn_digital"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text="Classic"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

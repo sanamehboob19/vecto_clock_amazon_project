@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1113">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/semibold_18"
+            android:letterSpacing="0.02"
+            android:text="Vecto Clock"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/btn_settings"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_focus_highlight"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:padding="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_settings"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btm_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_container" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btm_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:cardBackgroundColor="#1B1B1F"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_max="@dimen/_500sdp"
+        app:strokeColor="#33FFB6C1"
+        app:strokeWidth="1.5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_3sdp"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:id="@+id/btn_clock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_focus_highlight"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_6sdp">
+
+                <ImageView
+                    android:id="@+id/img_clock"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/ic_clock"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Clock"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_alarm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_focus_highlight"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_6sdp">
+
+                <ImageView
+                    android:id="@+id/img_alarm"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/ic_alarm"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_alarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Alarm"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_timer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_focus_highlight"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_6sdp">
+
+                <ImageView
+                    android:id="@+id/img_timer"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/ic_timer"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Timer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_stopwatch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_focus_highlight"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:nextFocusRight="@id/btn_start_stop"
+                android:nextFocusUp="@id/btn_timer"
+                android:nextFocusDown="@id/btn_more"
+                android:padding="@dimen/_6sdp">
+
+                <ImageView
+                    android:id="@+id/img_stopwatch"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/ic_stopwatch"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_stopwatch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Stopwatch"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_more"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_focus_highlight"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_6sdp">
+
+                <ImageView
+                    android:id="@+id/img_more"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/ic_more"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="More"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

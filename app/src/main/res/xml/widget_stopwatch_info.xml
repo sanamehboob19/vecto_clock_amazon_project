@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget_stopwatch"
+    android:minWidth="@dimen/_250sdp"
+    android:minHeight="@dimen/_55sdp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="1"
+    android:previewImage="@drawable/preview_stopwatch"
+    android:updatePeriodMillis="0"
+    android:resizeMode="horizontal"
+    android:widgetCategory="home_screen" />

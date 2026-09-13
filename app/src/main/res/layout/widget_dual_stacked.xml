@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. MAIN WIDGET BACKGROUND -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_widget_dark_rounded"
+        android:scaleType="fitXY" />
+
+    <!-- 2. EMPTY STATE -->
+    <TextView
+        android:id="@+id/tv_empty_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="No Cities Selected\nTap to add"
+        android:textAlignment="center"
+        android:textColor="#66FFFFFF"
+        android:visibility="gone" />
+
+    <!-- 3. MAIN CONTENT LAYER -->
+    <LinearLayout
+        android:id="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- ROW 1 CONTAINER -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="6dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_dual_row"
+                android:scaleType="fitXY" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp">
+                <TextView
+                    android:id="@+id/tv_city_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="LONDON"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp" />
+                <TextClock
+                    android:id="@+id/tv_time_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:format12Hour="hh:mm"
+                    android:textColor="#FFB6C1"
+                    android:textSize="22sp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <!-- ROW 2 CONTAINER -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_dual_row"
+                android:scaleType="fitXY" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp">
+                <TextView
+                    android:id="@+id/tv_city_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="TOKYO"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="12sp" />
+                <TextClock
+                    android:id="@+id/tv_time_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:format12Hour="hh:mm"
+                    android:textColor="#FFB6C1"
+                    android:textSize="22sp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <!-- BOTTOM LABELS -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Dual-Time"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+    </LinearLayout>
+</FrameLayout>

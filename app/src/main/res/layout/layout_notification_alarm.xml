@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/_12sdp"
+    android:paddingVertical="@dimen/_4sdp"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:src="@drawable/ic_alarm"
+            android:alpha="0.7"
+            app:tint="@color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:text="Vecto Clock • Alarm"
+            android:textColor="#AAAAAA"
+            android:letterSpacing="0.05"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_8ssp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_noti_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Morning Medicine"
+            android:textColor="@color/white"
+            android:fontFamily="@font/regular_18"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_toStartOf="@+id/tv_noti_time_info"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/tv_noti_time_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="end"
+            android:text="10:30 am • Swipe to stop"
+            android:textColor="#888888"
+            android:textSize="@dimen/_9ssp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/btn_noti_snooze"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:background="@drawable/bg_noti_btn_dark"
+            android:gravity="center"
+            android:text="Snooze"
+            android:textColor="#D0BCFF"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10ssp" />
+
+        <TextView
+            android:id="@+id/btn_noti_stop"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:background="@drawable/bg_noti_btn_dark"
+            android:gravity="center"
+            android:text="Stop"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10ssp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="#0F1113"
+    app:cardCornerRadius="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/wizard_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="50"
+            app:trackColor="#333333"
+            app:indicatorColor="#D0BCFF"/>
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:padding="20dp">
+
+            <ImageView android:id="@+id/iv_wizard_icon" android:layout_width="32dp" android:layout_height="32dp" android:layout_centerHorizontal="true" android:src="@drawable/ic_alarm" app:tint="@color/white"/>
+
+            <TextView android:id="@+id/tv_wizard_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@id/iv_wizard_icon" android:layout_marginTop="12dp" android:gravity="center" android:text="Set a regular wake-up alarm" android:textColor="@color/white" android:textSize="20sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_time_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_wizard_title"
+                android:layout_marginTop="30dp"
+                app:cardBackgroundColor="#1B1B1F"
+                app:cardCornerRadius="24dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_minus" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="56dp" android:layout_height="56dp" app:icon="@drawable/ic_minus" app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.SmallComponent"/>
+                        <LinearLayout android:id="@+id/layout_time_click" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginHorizontal="20dp" android:gravity="bottom">
+                            <TextView android:id="@+id/tv_wiz_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:39" android:textColor="@color/white" android:textSize="48sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/tv_wiz_ampm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp" android:layout_marginBottom="10dp" android:text="am" android:textColor="#D0BCFF" android:textSize="16sp" />
+                        </LinearLayout>
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_plus" style="@style/Widget.MaterialComponents.Button.OutlinedButton" android:layout_width="56dp" android:layout_height="56dp" app:icon="@drawable/ic_plus" app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.SmallComponent"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center">
+                        <TextView android:id="@+id/wiz_sun" style="@style/DayCircleStyle" android:text="S"/>
+                        <TextView android:id="@+id/wiz_mon" style="@style/DayCircleStyle" android:text="M"/>
+                        <TextView android:id="@+id/wiz_tue" style="@style/DayCircleStyle" android:text="T"/>
+                        <TextView android:id="@+id/wiz_wed" style="@style/DayCircleStyle" android:text="W"/>
+                        <TextView android:id="@+id/wiz_thu" style="@style/DayCircleStyle" android:text="T"/>
+                        <TextView android:id="@+id/wiz_fri" style="@style/DayCircleStyle" android:text="F"/>
+                        <TextView android:id="@+id/wiz_sat" style="@style/DayCircleStyle" android:text="S"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="20dp" android:background="#333333"/>
+
+                    <RelativeLayout android:id="@+id/row_toggle_1" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@+id/ic_t1" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_wakeup_sun" app:tint="@color/white"/>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic_t1" android:orientation="vertical">
+                            <TextView android:id="@+id/tv_wiz_feat_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sunrise Alarm" android:textColor="@color/white" />
+                            <TextView android:id="@+id/tv_wiz_feat_sub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Slowly brighten screen" android:textColor="#888888" android:textSize="12sp" />
+                        </LinearLayout>
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_wiz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" app:trackTint="@color/switch_track_selector"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_wiz_skip" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Skip" android:textColor="#D0BCFF" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_wiz_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:paddingHorizontal="24dp" android:text="Next" android:textColor="@color/black" app:backgroundTint="@color/pinkPrimary" app:cornerRadius="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

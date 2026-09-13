@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Thin Outer Circle -->
+    <path
+        android:pathData="M50,50m-35,0a35,35 0,1 1,70 0a35,35 0,1 1,-70 0"
+        android:strokeWidth="0.5"
+        android:strokeColor="#33FFFFFF" />
+
+    <!-- Top Pink Dot (12 o'clock position) -->
+    <path
+        android:pathData="M50,15m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
+        android:fillColor="#FFB6C1" />
+</vector>

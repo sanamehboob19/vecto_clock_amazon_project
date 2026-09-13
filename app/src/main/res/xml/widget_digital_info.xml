@@ -1,0 +1,10 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:initialLayout="@layout/widget_digital_stacked"
+    android:minWidth="110dp"
+    android:minHeight="110dp"
+    android:previewLayout="@layout/widget_digital_stacked"
+    android:previewImage="@drawable/pref_digital_stacked"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    tools:targetApi="31" />

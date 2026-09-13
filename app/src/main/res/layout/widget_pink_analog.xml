@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_dark_rounded"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- The Moving Analog Clock -->
+        <AnalogClock
+            android:id="@+id/analog_clock"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:dial="@drawable/ic_clock_dial"
+            android:hand_hour="@drawable/ic_hour_hand"
+            android:hand_minute="@drawable/ic_minute_hand" />
+
+        <!-- Date Display below the clock -->
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:format12Hour="EEEE, MMM d"
+            android:textColor="#99FFFFFF"
+            android:textSize="13sp" />
+    </LinearLayout>
+</RelativeLayout>

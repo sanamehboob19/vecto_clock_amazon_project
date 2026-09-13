@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_15sdp"
+    app:cardBackgroundColor="#121212"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/_20sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Duration"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- HOUR PART -->
+            <LinearLayout
+                android:id="@+id/layout_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/tv_input_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textColor="#FFB6C1"
+                    android:textSize="@dimen/_35ssp"
+                    android:fontFamily="sans-serif-light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hours"
+                    android:textColor="#555555"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" : "
+                android:textColor="#333333"
+                android:textSize="@dimen/_25ssp"
+                android:layout_marginHorizontal="@dimen/_5sdp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/tv_input_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textColor="#888888"
+                    android:textSize="@dimen/_35ssp"
+                    android:fontFamily="sans-serif-light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="minutes"
+                    android:textColor="#555555"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" : "
+                android:textColor="#333333"
+                android:textSize="@dimen/_25ssp"
+                android:layout_marginHorizontal="@dimen/_5sdp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/tv_input_sec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textColor="#888888"
+                    android:textSize="@dimen/_35ssp"
+                    android:fontFamily="sans-serif-light" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="seconds"
+                    android:textColor="#555555"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_backspace"
+                app:tint="#888888" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="#221F1F" />
+
+        <GridLayout
+            android:id="@+id/numPadGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:columnCount="3"
+            android:useDefaultMargins="false"
+            android:alignmentMode="alignBounds">
+
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="1" />
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="2" />
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="3" />
+
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="4" />
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="5" />
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="6" />
+
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="7" />
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="8" />
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="9" />
+
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" />
+
+            <com.google.android.material.button.MaterialButton style="@style/TimerNumberButtonStyle" android:text="0" />
+
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" />
+        </GridLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel_timer"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="#888888" />
+
+            <Button
+                android:id="@+id/btn_set_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="Start Timer"
+                android:textColor="@color/black"
+                app:backgroundTint="#FFB6C1"
+                app:cornerRadius="@dimen/_20sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

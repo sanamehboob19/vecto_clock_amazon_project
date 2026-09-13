@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_root_preview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#131316"
+    app:cardCornerRadius="@dimen/_24sdp"
+    app:cardElevation="0dp"
+    app:strokeColor="#1E1E1E"
+    app:strokeWidth="1.2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:background="@drawable/bg_widget_mock_home"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <View
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_clock_aura"
+                android:alpha="0.12" />
+
+            <FrameLayout
+                android:id="@+id/widget_preview_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layerType="hardware"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="@dimen/_12sdp"
+                android:background="#33000000"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_3sdp"
+                android:text="PREVIEW"
+                android:textStyle="italic"
+                android:textColor="#88FFFFFF"
+                android:textSize="@dimen/_7ssp"
+                android:letterSpacing="0.1"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif-black"/>
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1B1B1F"
+            android:paddingHorizontal="@dimen/_18sdp"
+            android:paddingVertical="@dimen/_15sdp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_add_widget"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_widget_style_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semibold_18"
+                    android:text="Stacked Digital"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp"
+                    android:letterSpacing="0.02" />
+
+                <TextView
+                    android:id="@+id/tv_widget_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Canvas Dimension: 2x2"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/_9ssp"
+                    android:fontFamily="@font/regular_18" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_widget"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_34sdp"
+                android:text="Add"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_10ssp"
+                app:backgroundTint="@color/pinkPrimary"
+                app:cornerRadius="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="#4DFFFFFF" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

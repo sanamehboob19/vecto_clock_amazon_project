@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="40dp"
+    android:viewportWidth="120"
+    android:viewportHeight="40">
+    <!-- Background Pill -->
+    <path android:fillColor="#1B1B1F" android:pathData="M10,5h100c5,0 5,30 0,30h-100c-5,0 -5,-30 0,-30z"/>
+    <!-- Reset Mock (Left) -->
+    <path android:fillColor="#444444" android:pathData="M20,20m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0"/>
+    <!-- Time Mock (Center) -->
+    <path android:fillColor="#FFFFFF" android:pathData="M45,15h30v10h-30z"/>
+    <!-- Play Mock (Right) -->
+    <path android:fillColor="@color/pinkPrimary" android:pathData="M100,20m-7,0a7,7 0,1 1,14 0a7,7 0,1 1,-14 0"/>
+</vector>

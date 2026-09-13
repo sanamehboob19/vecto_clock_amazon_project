@@ -1,0 +1,53 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- 1. BACKGROUND (Dark Rounded Card) -->
+    <path
+        android:pathData="M10,5h80a5,5 0 0 1 5,5v80a5,5 0 0 1 -5,5h-80a5,5 0 0 1 -5,-5v-80a5,5 0 0 1 5,-5z"
+        android:fillColor="#121212"/>
+
+    <!-- 2. PINK OUTER GLOW (Subtle Ring) -->
+<!--    <path-->
+<!--        android:pathData="M50,20m-28,0a28,28 0,1 1,56 0a28,28 0,1 1,-56 0"-->
+<!--        android:strokeWidth="1"-->
+<!--        android:strokeColor="#33FFB6C1"/>-->
+
+    <!-- 3. CLOCK FACE (Black Circle) -->
+    <path
+        android:pathData="M50,45m-25,0a25,25 0,1 1,50 0a25,25 0,1 1,-50 0"
+        android:fillColor="#1A1A1A"
+        android:strokeWidth="1"
+        android:strokeColor="#222222"/>
+
+    <!-- 4. TICK MARKERS (Pink Ticks at 12, 3, 6, 9) -->
+    <!-- Top -->
+    <path android:pathData="M50,23 L50,28" android:strokeWidth="1.5" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+    <!-- Bottom -->
+    <path android:pathData="M50,62 L50,67" android:strokeWidth="1.5" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+    <!-- Left -->
+    <path android:pathData="M28,45 L33,45" android:strokeWidth="1.5" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+    <!-- Right -->
+    <path android:pathData="M67,45 L72,45" android:strokeWidth="1.5" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+
+    <!-- 5. CLOCK HANDS -->
+    <!-- Hour Hand (at 1 o'clock) -->
+    <path android:pathData="M50,45 L60,35" android:strokeWidth="2.5" android:strokeColor="#FFFFFF" android:strokeLineCap="round"/>
+    <!-- Minute Hand (at 6 o'clock) -->
+    <path android:pathData="M50,45 L48,65" android:strokeWidth="2" android:strokeColor="#D1D1D1" android:strokeLineCap="round"/>
+
+    <!-- 6. CENTER PIN (Pink Dot) -->
+    <path
+        android:pathData="M50,45m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"
+        android:fillColor="#FFB6C1"/>
+
+    <!-- 7. DATE TEXT SIMULATION (Bottom Gray Text) -->
+    <path
+        android:pathData="M35,85 L65,85"
+        android:strokeWidth="3"
+        android:strokeColor="#44FFFFFF"
+        android:strokeLineCap="round"/>
+
+</vector>

@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.VectoClock" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+        <!--  Window Layout & Background  -->
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">#0F1113</item>
+
+        <!--  Status Bar Settings -->
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+
+        <!-- Navigation Bar Settings  -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+
+        <!-- Window Behavior  -->
+        <item name="android:windowContentTransitions">false</item>
+    </style>
+
+    <style name="Theme.VectoClock" parent="Base.Theme.VectoClock">
+        <!-- Fire TV Focus Customization -->
+        <item name="android:focusedByDefault">true</item>
+        <item name="colorAccent">@color/pinkPrimary</item>
+    </style>
+
+    <!-- Splash Theme: Prevents default icon flash before custom splash screen -->
+    <style name="Theme.VectoClock.Splash" parent="Theme.VectoClock">
+        <item name="android:windowBackground">#0F1113</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="31">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">#0F1113</item>
+        <item name="android:windowSplashScreenIconBackgroundColor" tools:targetApi="31">#0F1113</item>
+    </style>
+</resources>

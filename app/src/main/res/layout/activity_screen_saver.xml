@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_screen_saver"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <LinearLayout
+        android:id="@+id/layout_clock_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextClock
+            android:id="@+id/saver_text_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="hh:mm"
+            android:textColor="#FFB6C1"
+            android:textSize="@dimen/_70ssp"
+            android:fontFamily="sans-serif-thin"
+            android:shadowColor="#FFB6C1"
+            android:shadowRadius="25" />
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="EEEE, d MMM"
+            android:textAllCaps="true"
+            android:textColor="#444444"
+            android:textSize="@dimen/_12ssp"
+            android:letterSpacing="0.2" />
+
+    </LinearLayout>
+
+</FrameLayout>

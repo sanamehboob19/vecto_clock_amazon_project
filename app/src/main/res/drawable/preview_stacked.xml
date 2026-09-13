@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Background -->
+    <path android:fillColor="#1B1B1F" android:pathData="M10,10h100v100h-100z"/>
+    <!-- Stacked Text Mock (Top Box) -->
+    <path android:fillColor="#FFFFFF" android:pathData="M30,30h25v25h-25z"/>
+    <!-- Stacked Text Mock (Bottom Box) -->
+    <path android:fillColor="#FFFFFF" android:pathData="M30,65h25v25h-25z"/>
+    <!-- Pink Line -->
+    <path android:fillColor="@color/pinkPrimary" android:pathData="M70,30h4v60h-4z"/>
+</vector>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nzdeveloper.androidclock.alarmtimer.stopwatch">
+
+    <!--  SYSTEM ALARM & TIMING PERMISSIONS -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--  UI & INTERACTION PERMISSIONS -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!--  SERVICE PERMISSIONS (Android 14+ Compatibility) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+
+    <!-- ============================================ -->
+    <!-- AMAZON FIRE TV & TABLET COMPATIBILITY        -->
+    <!-- ============================================ -->
+    <!-- Fire TV has no touchscreen — must be optional -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <!-- Fire TV leanback launcher support -->
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <!-- Microphone is optional (Fire TV Stick has no mic by default) -->
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <!-- Location is optional (tablets may not have GPS) -->
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+
+    <application
+        android:name=".app.MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:banner="@drawable/banner_fire_tv"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VectoClock"
+        tools:targetApi="34">
+
+        <!-- STARTUP ACTIVITIES -->
+        <activity
+            android:name=".ui.activity.splash.SplashActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/Theme.VectoClock.Splash">
+            <!-- Phone / Tablet launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Amazon Fire TV launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.activity.main.MainActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- CORE ALARM COMPONENTS -->
+        <receiver
+            android:name=".service.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".service.AlarmService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_TYPE"
+                android:value="This service handles high-priority alarm ringing and full-screen intent delivery even when the app is killed." />
+        </service>
+
+        <!-- HIGH-PRIORITY RINGING UI (Exclude from Recents for Deep Clean) -->
+        <activity
+            android:name=".ui.activity.alarmRinging.RingingActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:showForAllUsers="true"
+            android:showOnLockScreen="true"
+            android:showWhenLocked="true"
+            android:taskAffinity=""
+            android:turnScreenOn="true" />
+
+        <!-- FEATURE ACTIVITIES -->
+        <activity android:name=".ui.activity.bedTime.BedtimeActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity android:name=".ui.activity.screenSaver.ScreenSaverActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity android:name=".ui.activity.worldClock.WorldClockActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity android:name=".ui.activity.worldClock.SearchCityActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity android:name=".ui.activity.setting.SettingsActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+        <activity android:name=".ui.activity.widget.WidgetHubActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+
+        <!-- Sunrise Alarm Activity (launched by AlarmReceiver for sunrise alarm type) -->
+        <activity android:name=".ui.activity.sunrise.SunriseActivity"
+            android:exported="false"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden" />
+
+        <!-- WIDGET PROVIDERS -->
+
+        <!-- 1. Standard Clock Widget -->
+        <receiver
+            android:name=".service.ClockWidget"
+            android:label="Vecto Elegance Bar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_info" />
+        </receiver>
+
+        <!-- 4. World Clock Widget -->
+        <receiver android:name=".service.WidgetWorldClock" android:label="World Clock Grid" android:exported="true">
+            <intent-filter> <action android:name="android.appwidget.action.APPWIDGET_UPDATE" /> </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_world_clock_info" />
+        </receiver>
+
+        <!-- 5. Stopwatch Widget -->
+        <receiver android:name=".service.WidgetStopwatch" android:label="Focus Stopwatch" android:exported="true">
+            <intent-filter> <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="action_stopwatch_toggle" />
+                <action android:name="action_stopwatch_reset" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_stopwatch_info" />
+        </receiver>
+
+        <receiver android:name=".service.WidgetPinkAnalog"
+            android:label="Pink Glow Analog"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_pink_analog_info" />
+        </receiver>
+
+        <!-- Pink Digital -->
+        <receiver android:name=".service.WidgetPinkDigital"
+            android:label="Vecto: Neon Pink"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_pink_digital_info" />
+        </receiver>
+
+        <!-- Glassmorphism -->
+        <receiver android:name=".service.WidgetGlassDigital"
+            android:label="Vecto: Glass Blur"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_glass_digital_info" />
+        </receiver>
+
+        <receiver android:name=".service.WidgetMinimalCircle"
+            android:label="Vecto: Minimal Dot"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_minimal_circle_info" />
+        </receiver>
+
+        <receiver android:name=".service.WidgetDualStacked"
+            android:label="Vecto: Dual-Time"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_dual_stacked_info" />
+        </receiver>
+
+        <receiver android:name=".service.WidgetWeatherClock"
+            android:label="Vecto: Weather + Clock"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_weather_clock_info" />
+        </receiver>
+
+
+
+<!--        &lt;!&ndash; 2. Stacked Digital Widget &ndash;&gt;-->
+<!--                <receiver android:name=".service.WidgetDigitalStacked" android:label="Stacked Digital" android:exported="true">-->
+<!--                    <intent-filter> <action android:name="android.appwidget.action.APPWIDGET_UPDATE" /> </intent-filter>-->
+<!--                    <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_digital_info" />-->
+<!--                </receiver>-->
+
+<!--                &lt;!&ndash; 3. Analog Widget &ndash;&gt;-->
+<!--                <receiver android:name=".service.WidgetAnalog" android:label="Classic Analog" android:exported="true">-->
+<!--                    <intent-filter> <action android:name="android.appwidget.action.APPWIDGET_UPDATE" /> </intent-filter>-->
+<!--                    <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_analog_info" />-->
+<!--                </receiver>-->
+        <!-- Native Daydream Screen Saver Service -->
+        <service
+            android:name=".service.VectoDreamService"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Vecto Clock Screensaver"
+            android:permission="android.permission.BIND_DREAM_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.dreams"
+                android:resource="@xml/dream_info" />
+        </service>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="#15161B"
+    app:cardCornerRadius="@dimen/_24sdp"
+    app:cardElevation="@dimen/_10sdp"
+    app:layout_constraintWidth_max="@dimen/_450sdp"
+    app:strokeColor="#252732"
+    app:strokeWidth="1.5dp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_20sdp">
+
+            <!-- 1. Header Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Alarm Dismiss Method"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Choose how you want to interact with your morning alarms."
+                android:textColor="#8E8E93"
+                android:textSize="@dimen/_10ssp" />
+
+            <!-- 2. Dynamic Preview Container -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                app:cardBackgroundColor="#0D0E11"
+                app:cardCornerRadius="@dimen/_20sdp"
+                app:strokeColor="#20222B"
+                app:strokeWidth="1dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Preview: TAP MODE -->
+                    <LinearLayout
+                        android:id="@+id/preview_tap_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:visibility="gone">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_48sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#1AFFFFFF"
+                            app:cardCornerRadius="@dimen/_12sdp"
+                            app:strokeColor="#D0BCFF"
+                            app:strokeWidth="1dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif-bold"
+                                android:text="SNOOZE"
+                                android:textColor="#D0BCFF"
+                                android:textSize="@dimen/_10ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_48sdp"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/pinkPrimary"
+                            app:cardCornerRadius="@dimen/_12sdp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif-black"
+                                android:text="STOP"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10ssp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- Preview: SWIPE MODE -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/preview_swipe_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/_25sdp"
+                        android:background="@drawable/bg_swipe_track"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Snooze"
+                            android:textColor="#555555"
+                            android:textSize="@dimen/_9ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/preview_swipe_thumb"
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_42sdp"
+                            app:cardBackgroundColor="@color/pinkPrimary"
+                            app:cardCornerRadius="@dimen/_50sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:strokeWidth="0dp">
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_alarm"
+                                app:tint="@color/black" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Stop"
+                            android:textColor="#555555"
+                            android:textSize="@dimen/_9ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 3. Choice Selection (TV Optimized) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Ensure these included layouts have focusable=true inside them -->
+                <include
+                    android:id="@+id/choice_tap"
+                    layout="@layout/item_dismiss_choice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/choice_swipe"
+                    layout="@layout/item_dismiss_choice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!-- 4. Footer Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancel"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_42sdp"
+                    android:focusable="true"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:textColor="#8E8E93"
+                    android:textSize="@dimen/_11ssp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_42sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:focusable="true"
+                    android:fontFamily="sans-serif-bold"
+                    android:paddingHorizontal="@dimen/_25sdp"
+                    android:text="Apply Method"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:backgroundTint="@color/pinkPrimary"
+                    app:cornerRadius="@dimen/_20sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</com.google.android.material.card.MaterialCardView>

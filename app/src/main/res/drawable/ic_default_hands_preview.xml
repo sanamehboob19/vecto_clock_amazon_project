@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Hour Hand Preview -->
+    <path
+        android:pathData="M50,50 L65,35"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+
+    <!-- Minute Hand Preview -->
+    <path
+        android:pathData="M50,50 L48,75"
+        android:strokeColor="#D1D1D1"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+
+    <!-- Center Pin -->
+    <path
+        android:pathData="M50,50m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
+        android:fillColor="#FFB6C1" />
+</vector>

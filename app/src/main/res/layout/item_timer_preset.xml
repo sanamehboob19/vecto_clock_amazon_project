@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_preset"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardBackgroundColor="#1B1B1F"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardElevation="0dp"
+    app:strokeColor="#2C2C2C"
+    app:strokeWidth="1.5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/_8sdp">
+
+        <TextView
+            android:id="@+id/tv_preset_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="5m"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/tv_preset_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Focus"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1"
+            android:textColor="@color/pinkPrimary"
+            android:textSize="@dimen/_7ssp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

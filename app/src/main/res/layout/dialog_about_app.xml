@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="#1B1B1F"
+    app:cardCornerRadius="@dimen/_24sdp"
+    app:cardElevation="0dp"
+    app:strokeColor="#2C2C2C"
+    app:strokeWidth="1.2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp">
+
+        <!-- 1. Header: App Icon & Name -->
+        <ImageView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/app_icon_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="sans-serif-black"
+            android:text="VECTO CLOCK"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:letterSpacing="0.1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version 1.0.1"
+            android:textColor="#555555"
+            android:textSize="@dimen/_9ssp" />
+
+        <View
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="@dimen/_15sdp"
+            android:background="@color/pinkPrimary" />
+
+        <!-- 2. Body: Scrollable Description -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About Vecto Clock"
+                    android:textColor="@color/pinkPrimary"
+                    android:fontFamily="@font/semibold_18"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Vecto Clock is a simple, fast, and reliable clock application designed to help you manage your time with ease. Whether you need an alarm, stopwatch, timer, or world clock, Vecto Clock provides essential timekeeping tools in a clean and user-friendly interface."
+                    android:textColor="#C4C6D0"
+                    android:fontFamily="@font/regular_18"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Premium Features"
+                    android:textColor="@color/pinkPrimary"
+                    android:fontFamily="@font/semibold_18"
+                    android:textSize="@dimen/_12ssp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="• Digital and Analog Clock\n• Advanced Alarm System\n• High-Precision Stopwatch\n• Countdown Focus Timer\n• Global World Clock Grid\n• Smart Bedtime Mode &amp; Detox\n• Home Screen Widgets"
+                    android:textColor="#C4C6D0"
+                    android:fontFamily="@font/regular_18"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:lineSpacingExtra="4dp"
+                    android:fontFamily="@font/regular_18"
+                    android:text="Our goal is to provide an accurate, reliable, and distraction-free clock experience for everyday use.\n\nThank you for choosing Vecto Clock."
+                    android:textColor="#C4C6D0"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- 3. Footer: Close Button & Branding -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_close_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_gravity="bottom"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:backgroundTint="@color/pinkPrimary"
+            app:cornerRadius="@dimen/_12sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="DESIGNED BY NEXT SOLUTION"
+            android:textColor="#333333"
+            android:letterSpacing="0.2"
+            android:fontFamily="@font/semibold_18"
+            android:textSize="@dimen/_8ssp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

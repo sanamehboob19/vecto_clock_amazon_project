@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_height="@dimen/_75sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    app:cardBackgroundColor="#1B1B1F"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:strokeColor="#333333"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_lap_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01"
+            android:textColor="@color/pinkPrimary"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_lap_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="00:00.00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_overall_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:text="00:00.00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

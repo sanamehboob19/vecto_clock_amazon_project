@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/widget_stopwatch_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_dark"
+    android:padding="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/btn_widget_reset"
+        android:layout_width="@dimen/_34sdp"
+        android:layout_height="@dimen/_34sdp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_noti_btn_dark"
+        android:src="@drawable/ic_reset" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Chronometer
+            android:id="@+id/widget_chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_22ssp" />
+
+        <TextView
+            android:id="@+id/tv_stopwatch_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STOPWATCH"
+            android:textColor="@color/pinkPrimary"
+            android:textSize="@dimen/_8ssp"
+            android:letterSpacing="0.2"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_widget_toggle"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_circle_pink"
+        android:padding="12dp"
+        android:src="@drawable/is_play"
+        app:tint="@color/black" />
+
+</RelativeLayout>

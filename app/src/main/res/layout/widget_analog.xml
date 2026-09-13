@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_analog_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_dark"
+    android:padding="12dp">
+
+    <AnalogClock
+        android:id="@+id/analog_clock_view"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/analog_clock_view"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:letterSpacing="0.2"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="VECTO"
+        android:textColor="@color/pinkPrimary"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

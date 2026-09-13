@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_dark_rounded"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Neon Digital Time -->
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="hh:mm"
+            android:textColor="#FFB6C1"
+            android:textSize="52sp"
+            android:fontFamily="sans-serif-light"
+            android:shadowColor="#FFB6C1"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="15" />
+
+        <!-- Simple Date -->
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:format12Hour="EEEE, MMM d"
+            android:textColor="#88FFFFFF"
+            android:textSize="14sp"
+            android:letterSpacing="0.05" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Outer Card -->
+    <path android:fillColor="#1B1B1F" android:pathData="M15,10h90c2.8,0 5,2.2 5,5v90c0,2.8 -2.2,5 -5,5h-90c-2.8,0 -5,-2.2 -5,-5v-90c0,-2.8 2.2,-5 5,-5z"/>
+    <!-- Stacked Text Mockup -->
+    <path android:fillColor="#FFFFFF" android:pathData="M35,30h20v20h-20z M35,60h20v20h-20z"/>
+    <!-- Pink Line Mockup -->
+    <path android:fillColor="@color/pinkPrimary" android:pathData="M65,30h4v40h-4z"/>
+</vector>

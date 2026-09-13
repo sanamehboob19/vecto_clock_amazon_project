@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Outer Glow Face -->
+    <path
+        android:pathData="M50,50m-40,0a40,40 0,1 1,80 0a40,40 0,1 1,-80 0"
+        android:strokeWidth="1"
+        android:strokeColor="#33FFB6C1"/>
+
+    <!-- Main Black Dial -->
+    <path
+        android:pathData="M50,50m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0"
+        android:fillColor="#1A1A1A"
+        android:strokeWidth="1.5"
+        android:strokeColor="#222222"/>
+
+    <!-- Pink Ticks -->
+    <path android:pathData="M50,18 L50,24" android:strokeWidth="2" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+    <path android:pathData="M50,76 L50,82" android:strokeWidth="2" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+    <path android:pathData="M18,50 L24,50" android:strokeWidth="2" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+    <path android:pathData="M76,50 L82,50" android:strokeWidth="2" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+</vector>

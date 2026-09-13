@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="60">
+    <path android:pathData="M5,5h90a5,5 0 0 1 5,5v40a5,5 0 0 1 -5,5h-90a5,5 0 0 1 -5,-5v-40a5,5 0 0 1 5,-5z" android:fillColor="#121212"/>
+    <!-- Simulated 12:45 -->
+    <path android:pathData="M30,20 L30,35 M35,20 L45,20 L45,27 L35,27 L35,35 L45,35 M50,23 L50,25 M50,30 L50,32 M55,20 L55,27 L65,27 L65,20 M65,20 L65,35 M70,20 L80,20 L80,27 L70,27 L70,20 M70,27 L80,27 L80,35"
+        android:strokeWidth="2.5" android:strokeColor="#FFB6C1" android:strokeLineCap="round"/>
+    <!-- Simulated Date -->
+    <path android:pathData="M35,48 L65,48" android:strokeWidth="1.5" android:strokeColor="#44FFFFFF" android:strokeLineCap="round"/>
+</vector>

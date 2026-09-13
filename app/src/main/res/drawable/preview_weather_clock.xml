@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="60">
+    <path android:pathData="M10,5h80a5,5 0 0 1 5,5v40a5,5 0 0 1 -5,5h-80a5,5 0 0 1 -5,-5v-40a5,5 0 0 1 5,-5z" android:fillColor="#121212"/>
+    <!-- Weather Side -->
+    <path android:pathData="M25,25m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0" android:fillColor="#FFB6C1"/>
+    <path android:pathData="M20,35 L30,35" android:strokeWidth="2" android:strokeColor="#FFFFFF"/>
+    <!-- Divider -->
+    <path android:pathData="M45,15 L45,45" android:strokeWidth="0.5" android:strokeColor="#33FFFFFF"/>
+    <!-- Clock Side -->
+    <path android:pathData="M55,25 L75,25" android:strokeWidth="4" android:strokeColor="#FFFFFF"/>
+    <path android:pathData="M55,35 L75,35" android:strokeWidth="1.5" android:strokeColor="#44FFFFFF"/>
+</vector>

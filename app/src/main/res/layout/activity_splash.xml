@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1113">
+
+    <LinearLayout
+        android:id="@+id/layout_logo_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_25sdp"
+        app:layout_constraintBottom_toTopOf="@id/linearProgress"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/app_icon_logo"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:alpha="0" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            style="@style/h1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textAllCaps="true"
+            android:text="@string/app_name"
+            android:letterSpacing="0.15"
+            android:alpha="0" />
+
+        <TextView
+            android:id="@+id/tv_tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TIME, REDEFINED"
+            android:textColor="@color/pinkPrimary"
+            android:textSize="@dimen/_10ssp"
+            android:letterSpacing="0.3"
+            android:fontFamily="sans-serif-light"
+            android:alpha="0"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/linearProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:progress="0"
+        android:progressDrawable="@drawable/gradient_progress"
+        app:layout_constraintBottom_toTopOf="@id/tv_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_footer"
+        style="@style/p4"
+        android:fontFamily="sans-serif-medium"
+        android:text="NZ DEVELOPER"
+        android:textColor="#333333"
+        android:letterSpacing="0.2"
+        android:layout_marginBottom="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
